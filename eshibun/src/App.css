@@ -1,6 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Love+Light&family=Lovers+Quarrel&display=swap');
+
 * {
-  width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+canvas {
+  height: 100vh !important;
+}
+
+body {
+  background-color: #000;
+}
+
+h1 {
+  position: absolute;
+  color: #fff;
+  font-size: 200px;
+  font-family: 'Love Light', cursive;
+  margin-left: calc(50vw - 280px);
+  margin-top: calc(50vh - 200px);
+}
+
+p {
+  font-family: 'Lovers Quarrel', cursive;
+}
+
+.title_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }

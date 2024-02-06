@@ -1,6 +1,8 @@
 import { Canvas, events, useFrame } from "@react-three/fiber"
 import './App.css'
-import { useRef, useState } from "react"
+import { Suspense, useRef, useState } from "react"
+import Rose from "../public/Rose"
+import { OrbitControls } from "@react-three/drei"
 
 const Cube = ({positon, size, color}) => {
   const ref = useRef()
@@ -29,13 +31,22 @@ const Cube = ({positon, size, color}) => {
   )
 }
 
+const Loading = () => {
+  return <p>Loading</p>
+}
+
 const App = () => {
   return (
     <>
+    <h1>Eshiebun</h1>
       <Canvas>
         <directionalLight position={[0,0,2]} />
         <ambientLight />
-        <Cube positon={[0,0,1]} color={"pink"} size={[1,1,1]}/>
+        {/* <Cube positon={[0,0,1]} color={"pink"} size={[1,1,1]}/> */}
+        <OrbitControls />
+        <Suspense fallback={<Cube positon={[0,0,1]} color={"pink"} size={[1,1,1]}/>}>
+          <Rose scale={1.5} position={[0, -4, 0]}/>
+        </Suspense>
       </Canvas>
     </>
   )
