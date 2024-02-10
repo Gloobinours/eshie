@@ -11,7 +11,7 @@ canvas {
 }
 
 body {
-  background-color: #000;
+  background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
 }
 
 h1 {
@@ -25,6 +25,7 @@ h1 {
 
 p {
   font-family: 'Lovers Quarrel', cursive;
+  color: #fff;
 }
 
 .title_container {
@@ -33,4 +34,20 @@ p {
   justify-content: center;
   height: 100%;
   width: 100%;
+}
+
+#loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #00f;
+}
+
+#loading p {
+  height: 50px;
+  width: 100px;
+  font-size: 20px;
 }
