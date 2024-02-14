@@ -3,7 +3,7 @@ import './App.css'
 import { Suspense, useRef, useState } from "react"
 import Rose from "../public/Rose"
 import LoadingScreen from "./LoadingScreen"
-import { Html, OrbitControls, ScrollControls } from "@react-three/drei"
+import { Html, OrbitControls, ScrollControls, Scroll, useScroll } from "@react-three/drei"
 
 const Cube = ({positon, size, color}) => {
   const ref = useRef()
@@ -32,6 +32,20 @@ const Cube = ({positon, size, color}) => {
   )
 }
 
+const MoveRose = () => {
+  const data = useScroll()
+  const group = useRef()
+  useFrame((state, delta) => {
+    group.current.children[0].rotation.y = data.range(0, 1/3) * Math.PI + delta
+  })
+
+  return (
+    <group ref={group}>
+      <Rose scale={1.5} position={[0, -4, 0]} />
+    </group>
+  )
+}
+
 const App = () => {
   return (
     <>
@@ -39,10 +53,10 @@ const App = () => {
       <Canvas>
         <directionalLight position={[0,0,2]} />
         <ambientLight />
-        <OrbitControls />
-        <ScrollControls pages={3} damping={0.25}>
+        <OrbitControls enableZoom={false}/>
+        <ScrollControls pages={5} damping={0.25}>
           <Suspense fallback={<Html><LoadingScreen /></Html>}>
-            <Rose scale={1.5} position={[0, -4, 0]}/>
+            <MoveRose />
           </Suspense>
         </ScrollControls>
       </Canvas>
