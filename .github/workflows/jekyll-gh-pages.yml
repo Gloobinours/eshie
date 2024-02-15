@@ -59,10 +59,10 @@ jobs:
       #     npm test
       - name: Install Dependencies
         run: npm install
-        working-directory: eshiebun
+        # working-directory: eshiebun
       - run: npm publish
         if: github.event_name == 'push'
-        working-directory: eshiebun
+        # working-directory: eshiebun
 
   # Deployment job
   deploy:
