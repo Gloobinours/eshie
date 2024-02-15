@@ -58,6 +58,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
         working-directory: eshibun
+      - name: Add user
+        run: npm adduser
       - run: npm publish
         if: github.event_name == 'push'
         working-directory: eshibun
