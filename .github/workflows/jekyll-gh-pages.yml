@@ -38,7 +38,7 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./eshiebun
+          source: ./
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -52,6 +52,7 @@ jobs:
           # Used to specify the path to a dependency file: package-lock.json, yarn.lock, etc. Supports wildcards or a list of file names for caching multiple dependencies.
           cache-dependency-path: 'eshiebun/package-lock.json'
       - name: npm install, build and test
+        working-directory: ./eshiebun
         run: |
           npm install
           npm --prefix /eshiebun/ run build --if-present
