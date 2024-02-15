@@ -55,7 +55,7 @@ jobs:
         working-directory: eshiebun
         run: |
           npm install
-          npm --prefix /eshiebun/ run build --if-present
+          npm run build --if-present
           npm test
       # - run: npm publish
         # if: github.event_name == 'push'
