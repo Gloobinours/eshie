@@ -1,5 +1,4 @@
 {
-  "name": "eshiebun",
   "dependencies": {
     "@react-three/drei": "^9.97.1"
   }
