@@ -49,6 +49,8 @@ jobs:
           always-auth: false # optional, default is false
           # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
           node-version: 10.4.0 # optional
+          # Used to specify the path to a dependency file: package-lock.json, yarn.lock, etc. Supports wildcards or a list of file names for caching multiple dependencies.
+          cache-dependency-path: 'eshiebun/package-lock.json'
       - name: Install Dependencies
         run: npm install
       - run: npm publish
