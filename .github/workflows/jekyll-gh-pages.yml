@@ -50,7 +50,7 @@ jobs:
           # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
           node-version: 10.4.0 # optional
           # Used to specify the path to a dependency file: package-lock.json, yarn.lock, etc. Supports wildcards or a list of file names for caching multiple dependencies.
-          cache-dependency-path: 'eshiebun/package-lock.json'
+          cache-dependency-path: 'eshibun/package-lock.json'
       # - name: npm install, build and test
       #   working-directory: eshiebun
       #   run: |
@@ -59,10 +59,10 @@ jobs:
       #     npm test
       - name: Install Dependencies
         run: npm install
-        # working-directory: eshiebun
+        working-directory: eshibun
       - run: npm publish
         if: github.event_name == 'push'
-        # working-directory: eshiebun
+        working-directory: eshibun
 
   # Deployment job
   deploy:
