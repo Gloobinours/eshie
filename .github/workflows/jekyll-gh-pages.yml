@@ -57,6 +57,8 @@ jobs:
       #     npm install
       #     npm run build --if-present
       #     npm test
+      - name: Install Dependencies
+        run: npm install
       - run: npm publish
         working-directory: eshiebun
         if: github.event_name == 'push'
