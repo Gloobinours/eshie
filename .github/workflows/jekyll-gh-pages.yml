@@ -53,8 +53,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
         working-directory: eshibun
-      - run: npm publish
-        if: github.event_name == 'push'
+      - run: npm run build
+        # if: github.event_name == 'push'
         working-directory: eshibun
 
   # Deployment job
